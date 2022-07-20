@@ -10,3 +10,6 @@
 [submodule "deps/zig-wlroots"]
 	path = deps/zig-wlroots
 	url = git@github.com:swaywm/zig-wlroots.git
+[submodule "deps/plasma-wayland-protocols"]
+	path = deps/plasma-wayland-protocols
+	url = git@github.com:KDE/plasma-wayland-protocols.git

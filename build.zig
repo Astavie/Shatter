@@ -10,6 +10,7 @@ pub fn build(b: *Builder) void {
 
     const scanner = ScanProtocolsStep.create(b);
     scanner.addSystemProtocol("stable/xdg-shell/xdg-shell.xml");
+    scanner.addProtocolPath("deps/plasma-wayland-protocols/src/protocols/server-decoration.xml");
 
     const wayland = Pkg{
         .name = "wayland",
