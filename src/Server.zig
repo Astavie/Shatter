@@ -6,8 +6,6 @@ const wl = @import("wayland").server.wl;
 const wlr = @import("wlroots");
 // const xkb = @import("xkbcommon");
 
-const kde = @import("kde_decoration.zig");
-
 const gpa = @import("main.zig").gpa;
 
 wl_server: *wl.Server,
@@ -24,8 +22,6 @@ new_xdg_surface: wl.Listener(*wlr.XdgSurface) = wl.Listener(*wlr.XdgSurface).ini
 
 xdg_decoration_manager: *wlr.XdgDecorationManagerV1,
 new_toplevel_decoration: wl.Listener(*wlr.XdgToplevelDecorationV1) = wl.Listener(*wlr.XdgToplevelDecorationV1).init(newToplevelDecoration),
-
-kde_decoration_manager: kde.KdeDecorationManager = undefined,
 
 pub fn init(server: *Server) !void {
     const wl_server = try wl.Server.create();
@@ -44,6 +40,9 @@ pub fn init(server: *Server) !void {
 
         .xdg_decoration_manager = try wlr.XdgDecorationManagerV1.create(wl_server),
     };
+
+    const kde_manager = try wlr.KdeServerDecorationManager.create(wl_server);
+    kde_manager.setDefaultMode(.server);
 
     try server.kde_decoration_manager.init(wl_server);
 
