@@ -27,7 +27,7 @@ Shatter can then be compiled using, for example:
 zig build -Drelease-safe
 ```
 
-The output can then be found and run in `./zig-out/bin/`
+The executable is then located at `./zig-out/bin/shatter`
 
 ## Usage
 
