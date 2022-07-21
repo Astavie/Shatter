@@ -3,7 +3,8 @@
 	url = git@github.com:ifreund/zig-pixman.git
 [submodule "deps/zig-wayland"]
 	path = deps/zig-wayland
-	url = git@github.com:ifreund/zig-wayland.git
+	url = git@github.com:Astavie/zig-wlroots.git
+	branch = kde-decoration
 [submodule "deps/zig-xkbcommon"]
 	path = deps/zig-xkbcommon
 	url = git@github.com:ifreund/zig-xkbcommon.git
