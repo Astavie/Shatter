@@ -44,8 +44,6 @@ pub fn init(server: *Server) !void {
     const kde_manager = try wlr.KdeServerDecorationManager.create(wl_server);
     kde_manager.setDefaultMode(.server);
 
-    try server.kde_decoration_manager.init(wl_server);
-
     try server.renderer.initServer(wl_server);
     try server.scene.attachOutputLayout(server.output_layout);
 
